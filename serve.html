@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หน้าแรก</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: rgba(138, 196, 121, 0.8);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: calc(100vh - 60px);
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.4); /* พื้นหลังโปร่งใสให้อ่านง่าย */
+    }
+
+    .content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .navbar a {
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      .content h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="index.html">หน้าแรก</a>
+  <a href="about.html">เกี่ยวกับ</a>
+  <a href="serve.html">บริการ</a>
+  <a href="contact.html">ติดต่อ</a>
+</div>
+
+<div class="content">
+  <h1>บริการของเรา</h1>
+  <p>เรามีบริการที่หลากหลาย เช่น ออกแบบพื้นหลังเว็บไซต์ การออกแบบโลโก้</p>
+</div>
+
+</body>
+</html>
+

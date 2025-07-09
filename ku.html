@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ระบบจัดการข้อมูลนักเรียนออนไลน์</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2f80ed;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .dashboard-header h2 {
+      margin: 0;
+      color: #2f80ed;
+    }
+    .logout-btn {
+      background-color: #eb5757;
+      border: none;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .logout-btn:hover {
+      background-color: #c0392b;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #2f80ed;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f7f9fc;
+    }
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    form input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    form button {
+      margin-top: 1rem;
+      background-color: #2f80ed;
+      color: white;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #1c5ed6;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  ระบบจัดการข้อมูลนักเรียนออนไลน์
+</header>
+
+<!-- Login Page -->
+<div class="container" id="login-page">
+  <h2 style="color:#2f80ed; text-align:center;">เข้าสู่ระบบ</h2>
+  <form onsubmit="return login(event)">
+    <label for="username">ชื่อผู้ใช้</label>
+    <input type="text" id="username" placeholder="กรุณากรอกชื่อผู้ใช้" required />
+    <label for="password">รหัสผ่าน</label>
+    <input type="password" id="password" placeholder="กรุณากรอกรหัสผ่าน" required />
+    <button type="submit">เข้าสู่ระบบ</button>
+  </form>
+</div>
+
+<!-- Teacher Dashboard -->
+<div class="container" id="dashboard-page" style="display:none;">
+  <div class="dashboard-header">
+    <h2>แดชบอร์ดครู</h2>
+    <button class="logout-btn" onclick="logout()">ออกจากระบบ</button>
+  </div>
+  
+  <button style="margin-top:10px; background-color:#27ae60; color:#fff; border:none; border-radius:6px; padding:0.6rem 1rem; cursor:pointer;"
+          onclick="goToAddStudent()">เพิ่มนักเรียนใหม่</button>
+
+  <h3>รายชื่อนักเรียน</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>รหัสนักเรียน</th>
+        <th>ชื่อ - นามสกุล</th>
+        <th>ห้องเรียน</th>
+        <th>คะแนนเฉลี่ย</th>
+        <th>จัดการ</th>
+      </tr>
+    </thead>
+    <tbody id="student-table-body">
+    </tbody>
+  </table>
+</div>
+
+<!-- Add/Edit Student Page -->
+<div class="container" id="edit-student-page" style="display:none;">
+  <div class="dashboard-header">
+    <h2>เพิ่ม/แก้ไขข้อมูลนักเรียน</h2>
+    <button class="logout-btn" onclick="backToDashboard()">กลับไปหน้าแดชบอร์ด</button>
+  </div>
+
+  <form id="student-form" onsubmit="return saveStudent(event)">
+    <label for="student-id">รหัสนักเรียน</label>
+    <input type="text" id="student-id" placeholder="รหัสนักเรียน" required />
+
+    <label for="student-name">ชื่อ - นามสกุล</label>
+    <input type="text" id="student-name" placeholder="ชื่อ - นามสกุล" required />
+
+    <label for="student-class">ห้องเรียน</label>
+    <input type="text" id="student-class" placeholder="ห้องเรียน" required />
+
+    <label for="student-score">คะแนนเฉลี่ย</label>
+    <input type="number" id="student-score" placeholder="คะแนนเฉลี่ย" min="0" max="100" required />
+
+    <button type="submit">บันทึกข้อมูล</button>
+  </form>
+</div>
+
+<!-- Student Dashboard -->
+<div class="container" id="student-dashboard-page" style="display:none;">
+  <div class="dashboard-header">
+    <h2>ระบบนักเรียน</h2>
+    <button class="logout-btn" onclick="logout()">ออกจากระบบ</button>
+  </div>
+
+  <div id="student-info">
+    <h3>ข้อมูลส่วนตัว</h3>
+    <p><strong>รหัสนักเรียน:</strong> <span id="stu-id"></span></p>
+    <p><strong>ชื่อ - นามสกุล:</strong> <span id="stu-name"></span></p>
+    <p><strong>ห้องเรียน:</strong> <span id="stu-class"></span></p>
+    <p><strong>คะแนนเฉลี่ย:</strong> <span id="stu-score"></span></p>
+  </div>
+</div>
+
+<script>
+  // ตัวอย่างข้อมูลนักเรียน
+  let students = [
+    { id: 'S001', name: 'สมชาย ใจดี', class: 'ม.1/1', score: 85 },
+    { id: 'S002', name: 'สมหญิง สวยงาม', class: 'ม.1/2', score: 92 },
+    { id: 'S003', name: '

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <header><img src="https://example.com/logo.png" alt="โลโก้ไมเนอร์ฟู้ด">
+</header>
+  <meta charset="UTF-8">
+  <title>7-Eleven Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+
+    .menu-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      border-bottom: 2px solid #f0f0f0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .menu-logo img {
+      height: 60px;
+    }
+
+    .menu-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    .menu-item img {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 5px;
+    }
+
+    .menu-item:hover {
+      color: #d0021b;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .menu-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-container {
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="menu-bar">
+  <div class="menu-logo">
+    <img src="logo7.png" alt="7-Eleven Logo">
+  </div>
+  <div class="menu-container">
+    <a href="#" class="menu-item">
+      <img src="icon1.png" alt="All Online">
+      <span>All Online</span>
+    </a>
+    <a href="#" class="menu-item">
+      <img src="icon2.png" alt="ร้านเซเว่น">
+      <span>ร้านเซเว่น</span>
+    </a>
+    <a href="#" class="menu-item">
+      <img src="icon3.png" alt="โปรโมชั่น">
+      <span>โปรโมชั่น</span>
+    </a>
+    <a href="#" class="menu-item">
+      <img src="icon4.png" alt="สินค้า">
+      <span>สินค้า</span>
+    </a>
+    <a href="#" class="menu-item">
+      <img src="icon5.png" alt="ออลล์เมมเบอร์">
+      <span>ออลล์ เมมเบอร์</span>
+    </a>
+    <a href="#" class="menu-item">
+      <img src="icon6.png" alt="ค้นหาร้าน">
+      <span>ค้นหาร้าน</span>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

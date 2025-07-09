@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>เมนูแกง</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
+  <link rel="icon" href="photo/AnyConv.com__8.ico" type="image/png">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    nav {
+      background-color: #018060;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 6px 12px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #426fa3;
+      border-radius: 5px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      background-color: #fff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #68f8e5;
+    }
+
+    #search {
+      margin-top: 15px;
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .food-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .food-item {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 280px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .food-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .food-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .food-info {
+      padding: 15px;
+    }
+
+    .food-category {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 5px;
+    }
+
+    .food-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .food-price {
+      font-size: 16px;
+      color: #e91e63;
+    }
+
+    .hidden {
+      display: none;
+    }
+    .logo {
+      width: 40px;
+    }
+  </style>
+</head>
+<body>
+   <nav>
+    <img src="photo/8.PNG" class="logo"><a href="food-item1.html">หน้าแรก</a>
+    <img src="photo/book.png" class="logo"><a href="Food list.html">เมนูอาหาร</a>
+    <img src="photo/ramen.png" class="logo"><a href="pasta.html">พาสต้า</a>
+    <img src="photo/pot.png" class="logo"><a href="soup.html">ต้ม</a>
+    <img src="photo/curry.png" class="logo"><a href="curry.html">แกง</a>
+    <img src="photo/panna-cotta.png" class="logo"><a href="dessert.html">ของหวาน</a>
+    <img src="photo/ice-tea.png" class="logo"><a href="fruit.html">ผลไม้ / น้ำผลไม้</a>
+  </nav>
+
+  <header>
+    <h1>เมนูแกง</h1>
+    <input type="text" id="search" placeholder="🔍 ค้นหาเมนูแกง..." />
+  </header>
+
+  <div class="food-list">
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/a151e31f-a577-4f31-8d47-8b7d15fabc72.jpg" alt="แกงส้มปลาช่อนแป๊ะซะ">
+      <div class="food-info">
+        <div class="food-category">แกง</div>
+        <div class="food-name">แกงส้มปลาช่อนแป๊ะซะ</div>
+        <div class="food-price">ราคา 90 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/f9b818de-4aae-4e63-af94-faf460f78745.jpg" alt="แกงเผ็ดเป็ดย่าง">
+      <div class="food-info">
+        <div class="food-category">แกง</div>
+        <div class="food-name">แกงเผ็ดเป็ดย่าง</div>
+        <div class="food-price">ราคา 100 บาท</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById('search');
+    input.addEventListener('input', () => {
+      const filter = input.value.trim().toLowerCase();
+      document.querySelectorAll('.food-item').forEach(item => {
+        const name = item.querySelector('.food-name').textContent.toLowerCase();
+        const cat = item.querySelector('.food-category').textContent.toLowerCase();
+        item.classList.toggle('hidden', !(name.includes(filter) || cat.includes(filter)));
+      });
+    });
+  </script>
+</body>
+</html>

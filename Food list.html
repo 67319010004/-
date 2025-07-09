@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>เมนูอาหาร (with Search)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
+  <link rel="icon" href="photo/AnyConv.com__8.ico" type="image/png">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 20px;
+      background: #b1eca5;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00796b;
+      font-weight: bold;
+      padding: 6px 12px;
+      background: #e0f2f1;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+
+    nav a:hover {
+      background: #b2dfdb;
+    }
+
+    #search {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 30px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #78f1f1;
+      border-radius: 4px;
+    }
+
+    .food-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .food-item {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(100, 145, 158, 0.1);
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .food-item.hidden {
+      display: none;
+    }
+
+    .food-image {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .food-info {
+      padding: 15px;
+    }
+
+    .food-category {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 8px;
+      text-transform: capitalize;
+    }
+
+    .food-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .food-price {
+      font-size: 1.1rem;
+      color: #2c7a7b;
+      font-weight: bold;
+    }
+    .logo {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+
+   <nav>
+    <img src="photo/8.PNG" class="logo"><a href="food-item1.html">หน้าแรก</a>
+    <img src="photo/book.png" class="logo"><a href="Food list.html">เมนูอาหาร</a>
+    <img src="photo/ramen.png" class="logo"><a href="pasta.html">พาสต้า</a>
+    <img src="photo/pot.png" class="logo"><a href="soup.html">ต้ม</a>
+    <img src="photo/curry.png" class="logo"><a href="curry.html">แกง</a>
+    <img src="photo/panna-cotta.png" class="logo"><a href="dessert.html">ของหวาน</a>
+    <img src="photo/ice-tea.png" class="logo"><a href="fruit.html">ผลไม้ / น้ำผลไม้</a>
+  </nav>
+  <header>
+    <h1>ไมเนอร์ฟู้ด - ร้านอาหารออนไลน์</h1>
+    <h1>ค้นหาเมนูอาหาร</h1>
+    <input type="text" id="search" placeholder="🔍 พิมพ์ชื่อหรือหมวดอาหาร..." />
+  </header>
+
+  <div class="food-list">
+
+    <div class="food-item">
+      <img class="food-image" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80" alt="สปาเก็ตตี้">
+      <div class="food-info">
+        <div class="food-category">พาสต้า</div>
+        <div class="food-name">สปาเก็ตตี้ซอสเนื้อ</div>
+        <div class="food-price">ราคา 120 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/be069ecc-e276-404b-a1b5-1cfe75eda891.jpg" alt=" สปาเกตตีผัดขี้เมา">
+      <div class="food-info">
+        <div class="food-category">พาสต้า</div>
+        <div class="food-name"> สปาเกตตีผัดขี้เมา</div>
+        <div class="food-price">ราคา 120 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/3d735587-e0fd-4409-ad65-bfeb72f15e98.jpg" alt="ผัดพริกหยวก">
+      <div class="food-info">
+        <div class="food-category">ผัด</div>
+        <div class="food-name">ผัดพริกหยวก</div>
+        <div class="food-price">ราคา 45 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/35fd571d-3d8d-4044-94f1-960fc29ce60c.jpg" alt="ผัดน้ำมันหอย">
+      <div class="food-info">
+        <div class="food-category">ผัด</div>
+        <div class="food-name">ผัดน้ำมันหอย</div>
+        <div class="food-price">ราคา 50 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://img.wongnai.com/p/1920x0/2023/04/13/6a6f71f515eb43d2afaa08186ca007fa.jpg" alt="แตงโมปลาแห้ง">
+      <div class="food-info">
+        <div class="food-category">ของหวาน</div>
+        <div class="food-name">แตงโมปลาแห้ง</div>
+        <div class="food-price">ราคา 100 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://img.wongnai.com/p/1920x0/2018/03/01/fa533a3d5918427bbb8e406ca4cae9a5.jpg" alt="ต้มจิ๋วเนื้อ">
+      <div class="food-info">
+        <div class="food-category">ต้ม</div>
+        <div class="food-name">ต้มจิ๋วเนื้อ</div>
+        <div class="food-price">ราคา 70 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/72925306-cfc0-4521-96b0-40f21ce7d9a9.jpg" alt="ต้มแซ่บปลากะพง">
+      <div class="food-info">
+        <div class="food-category">ต้ม</div>
+        <div class="food-name">ต้มแซ่บปลากะพง</div>
+        <div class="food-price">ราคา 70 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/77889201-1b1b-46e5-894c-3eaa22ea3686.jpg" alt="ปลาดุกฟู">
+      <div class="food-info">
+        <div class="food-category">ปลา</div>
+        <div class="food-name">ปลาดุกฟู</div>
+        <div class="food-price">ราคา 90 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://img.wongnai.com/p/1920x0/2018/08/21/97001d21100c4ec5a25a3f527d8dbe4b.jpg" alt="ข้าวผัดกุ้งห่อไข่">
+      <div class="food-info">
+        <div class="food-category">ข้าว</div>
+        <div class="food-name">ข้าวผัดกุ้งห่อไข่</div>
+        <div class="food-price">ราคา 70 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/cf8adba3-57ce-4c8c-9b65-1f2530b3c9d1.jpg" alt="ต้มโคล้งปลาทู">
+      <div class="food-info">
+        <div class="food-category">ต้ม</div>
+        <div class="food-name">ต้มโคล้งปลาทู</div>
+        <div class="food-price">ราคา 50 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/a151e31f-a577-4f31-8d47-8b7d15fabc72.jpg" alt="แกงส้มปลาช่อนแป๊ะซะ">
+      <div class="food-info">
+        <div class="food-category">แกง</div>
+        <div class="food-name">แกงส้มปลาช่อนแป๊ะซะ</div>
+        <div class="food-price">ราคา 90 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/f9b818de-4aae-4e63-af94-faf460f78745.jpg" alt="แกงเผ็ดเป็ดย่าง">
+      <div class="food-info">
+        <div class="food-category">แกง</div>
+        <div class="food-name">แกงเผ็ดเป็ดย่าง</div>
+        <div class="food-price">ราคา 100 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/e1685d8f-afe5-4ed0-b564-4fa16fd4bd3c.jpg" alt="หมี่กรอบ">
+      <div class="food-info">
+        <div class="food-category">หมี่กรอบ</div>
+        <div class="food-name">หมี่กรอบ</div>
+        <div class="food-price">ราคา 70 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://img.wongnai.com/p/1920x0/2018/06/18/2979c50de28b4137a3c0224591db4af5.jpg" alt="บัวลอยเสียบไม้">
+      <div class="food-info">
+        <div class="food-category">ของหวาน</div>
+        <div class="food-name">บัวลอยเสียบไม้</div>
+        <div class="food-price">ราคา 80 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://img.wongnai.com/p/1920x0/2021/06/27/23c41fe71cbf47df967a537b001e5afb.jpg" alt="ขนมเหนียว">
+      <div class="food-info">
+        <div class="food-category">ของหวาน</div>
+        <div class="food-name">ขนมเหนียว</div>
+        <div class="food-price">ราคา 60 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://img.wongnai.com/p/1920x0/2019/04/17/240c9efa0c8c4ae7b4233594f67c50f9.jpg" alt="ขนมอินทนิล">
+      <div class="food-info">
+        <div class="food-category">ของหวาน</div>
+        <div class="food-name">ขนมอินทนิล</div>
+        <div class="food-price">ราคา 50 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://img.wongnai.com/p/1920x0/2018/12/18/5e8f656e14aa41fa83113e4d94aae164.jpg" alt="ขนมพระพาย">
+      <div class="food-info">
+        <div class="food-category">ของหวาน</div>
+        <div class="food-name">ขนมพระพาย</div>
+        <div class="food-price">ราคา 50 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://img.wongnai.com/p/l/2017/10/01/87b765c03bd247a39626940a96071d15.jpg" alt="ทับทิมกรอบ">
+      <div class="food-info">
+        <div class="food-category">ของหวาน</div>
+        <div class="food-name">ทับทิมกรอบ</div>
+        <div class="food-price">ราคา 70 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy-d1iUb3SYtsnS4zv2SpmL2_VamCulzUrMTYSYTqJOnwBNdReZqblGqc0NoFEmqPlZRQ&usqp=CAU" alt="ผลไม้รวม">
+      <div class="food-info">
+        <div class="food-category">ผลไม้รวม</div>
+        <div class="food-name">ผลไม้รวม</div>
+        <div class="food-price">ราคา 120 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3rgfFxbmZlUNsOPUqxMThOsRVGCyibmNfI4vVhMcfelYMIQ8xCCheKkMrJ6nDJsHvriM&usqp=CAU" alt="น้ำผลไม้">
+      <div class="food-info">
+        <div class="food-category">น้ำผลไม้</div>
+        <div class="food-name">น้ำส้ม</div>
+        <div class="food-price">ราคา 25 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgVyJ9uPG91zK9rtbXRJnf22Mj8G3Gh8F1XyaYL6aAzgTC-7WbVmcSrLs-2w059ySJy00&usqp=CAU" alt="น้ำผลไม้">
+      <div class="food-info">
+        <div class="food-category">น้ำผลไม้</div>
+        <div class="food-name">น้ำโซดาสตอเบอร์รี่</div>
+        <div class="food-price">ราคา 25 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://www.nestleprofessional.co.th/sites/default/files/2023-07/WAKE%20UP%2C%20BABE.jpg" alt="น้ำผลไม้">
+      <div class="food-info">
+        <div class="food-category">น้ำผลไม้</div>
+        <div class="food-name">น้ำเสาวรส</div>
+        <div class="food-price">ราคา 25 บาท</div>
+      </div>
+    </div>
+
+     <div class="food-item">
+      <img class="food-image" src="https://img-global.cpcdn.com/recipes/583ac0076df7a0d8/680x964cq90/%E0%B8%A3%E0%B8%9B-%E0%B8%AB%E0%B8%A5%E0%B8%81-%E0%B8%82%E0%B8%AD%E0%B8%87-%E0%B8%AA%E0%B8%95%E0%B8%A3-%E0%B8%AB%E0%B8%A1%E0%B9%82%E0%B8%AA%E0%B8%A3%E0%B8%87.jpg" alt="หมูโสร่ง">
+      <div class="food-info">
+        <div class="food-category">หมี่</div>
+        <div class="food-name">หมูโสร่ง</div>
+        <div class="food-price">ราคา 85 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://img-global.cpcdn.com/recipes/0424cbd95a290af3/680x964cq90/%E0%B8%A3%E0%B8%9B-%E0%B8%AB%E0%B8%A5%E0%B8%81-%E0%B8%82%E0%B8%AD%E0%B8%87-%E0%B8%AA%E0%B8%95%E0%B8%A3-%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B8%9C%E0%B8%94%E0%B8%99%E0%B8%B3%E0%B8%9E%E0%B8%A3%E0%B8%81%E0%B8%A5%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%AD.jpg" alt="ข้าวผัดน้ำพริกลงเรือ">
+      <div class="food-info">
+        <div class="food-category">ข้าว</div>
+        <div class="food-name">ข้าวผัดน้ำพริกลงเรือ</div>
+        <div class="food-price">ราคา 75 บาท</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById('search');
+    input.addEventListener('input', () => {
+      const filter = input.value.trim().toLowerCase();
+      document.querySelectorAll('.food-item').forEach(item => {
+        const name = item.querySelector('.food-name').textContent.toLowerCase();
+        const cat = item.querySelector('.food-category').textContent.toLowerCase();
+        item.classList.toggle('hidden', !(name.includes(filter) || cat.includes(filter)));
+      });
+    });
+  </script>
+
+</body>
+</html>

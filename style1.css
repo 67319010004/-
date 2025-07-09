@@ -1,0 +1,37 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding-top: 100px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.welcome-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  margin: 0 auto;
+  width: 60%;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 3em;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .welcome-box {
+    width: 90%;
+    padding: 20px;
+  }
+}

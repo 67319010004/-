@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>หน้าเว็บต้อนรับ</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .welcome-box {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      margin: 100px auto 0 auto;
+      width: 60%;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .welcome-box h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    .welcome-box p {
+      font-size: 1.5em;
+    }
+
+    @media (max-width: 768px) {
+      .welcome-box {
+        width: 90%;
+        padding: 20px;
+        margin-top: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">หน้าแรก</a>
+    <a href="about.html">เกี่ยวกับ</a>
+    <a href="serve.html">บริการ</a>
+    <a href="contact.html">ติดต่อ</a>
+  </div>
+
+  <div class="welcome-box">
+    <h1>ยินดีต้อนรับ!</h1>
+    <p id="welcomeMessage"></p>
+  </div>
+
+  <script>
+    // แก้ไขให้เป็น string template ถูกต้อง
+    const name = prompt("กรุณากรอกชื่อของคุณ:");
+    const welcomeText = name ? `สวัสดีคุณ ${name} ยินดีต้อนรับสู่เว็บไซต์ของเรา!` : "ยินดีต้อนรับผู้เยี่ยมชม!";
+    document.getElementById("welcomeMessage").textContent = welcomeText;
+  </script>
+
+</body>
+</html>
+
+

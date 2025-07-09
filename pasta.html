@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>เมนูพาสต้า</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
+  <link rel="icon" href="photo/AnyConv.com__8.ico" type="image/png">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      background: #b1eca5;
+    }
+
+    nav {
+      background-color: #2c7a7b;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 6px 12px;
+      transition: background-color 0.3s;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #225e5f;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      color: #2c7a7b;
+      margin: 0;
+    }
+
+    .food-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .food-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 240px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .food-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .food-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .food-info {
+      padding: 15px;
+    }
+
+    .food-category {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 5px;
+    }
+
+    .food-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .food-price {
+      font-size: 16px;
+      color: #2c7a7b;
+      font-weight: bold;
+    }
+    .logo {
+      width: 40px;
+    }
+  </style>
+</head>
+<body>
+   <nav>
+    <img src="photo/8.PNG" class="logo"><a href="food-item1.html">หน้าแรก</a>
+    <img src="photo/book.png" class="logo"><a href="Food list.html">เมนูอาหาร</a>
+    <img src="photo/ramen.png" class="logo"><a href="pasta.html">พาสต้า</a>
+    <img src="photo/pot.png" class="logo"><a href="soup.html">ต้ม</a>
+    <img src="photo/curry.png" class="logo"><a href="curry.html">แกง</a>
+    <img src="photo/panna-cotta.png" class="logo"><a href="dessert.html">ของหวาน</a>
+    <img src="photo/ice-tea.png" class="logo"><a href="fruit.html">ผลไม้ / น้ำผลไม้</a>
+  </nav>
+
+  <header>
+    <h1>เมนูหมวดพาสต้า</h1>
+  </header>
+
+  <div class="food-list">
+    <div class="food-item">
+      <img class="food-image" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80" alt="สปาเก็ตตี้ซอสเนื้อ">
+      <div class="food-info">
+        <div class="food-category">พาสต้า</div>
+        <div class="food-name">สปาเก็ตตี้ซอสเนื้อ</div>
+        <div class="food-price">ราคา 120 บาท</div>
+      </div>
+    </div>
+
+    <div class="food-item">
+      <img class="food-image" src="https://s359.kapook.com//pagebuilder/be069ecc-e276-404b-a1b5-1cfe75eda891.jpg" alt="สปาเกตตีผัดขี้เมา">
+      <div class="food-info">
+        <div class="food-category">พาสต้า</div>
+        <div class="food-name">สปาเกตตีผัดขี้เมา</div>
+        <div class="food-price">ราคา 120 บาท</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
